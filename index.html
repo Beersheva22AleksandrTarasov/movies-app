@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieDB</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+</head>
+<body>
+    <section id="menu-place" class="menu-section">
+    </section>
+
+    <main>
+        <section id="home" hidden>
+            <div id="container-buttons">
+                <button id="prev-button-popular" class="menu-button menu-button1">Prev</button>`
+                <button id="next-button-popular" class="menu-button menu-button1">Next</button>`
+            </div>
+            <div class="movies-container">
+                <div class="movies-popular" id="movies">
+                    
+                </div>
+                <div class="modal">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="now-playing" hidden>
+            <div id="container-buttons">
+                <button id="prev-button-now-playing" class="menu-button menu-button1">Prev</button>`
+                <button id="next-button-now-playing" class="menu-button menu-button1">Next</button>`
+            </div>
+            <div class="movies-container">
+                <div class="movies-now-playing" id="movies">
+                    
+                </div>
+            </div>
+        </section>
+        
+        <section id="search" hidden>
+            <form id="container-search">
+                <input type="search" class="text-field__input-search" id="search" placeholder="Search">
+            </form>
+            <div class="movies-container">
+                <div class="movies-search" id="movies">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="favorites" hidden>
+            <div class="movies-container">
+                <div class="movies-favorites" id="movies">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="registration" hidden></section>
+
+        <section id="sign-in" hidden></section>
+    </main>
+
+    <section id="spinner-place"></section>
+    <script src="src/app.js" type="module"></script>
+</body>
+</html>
