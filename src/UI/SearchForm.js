@@ -29,7 +29,6 @@ export default class SearchForm {
                     <div class="movie__title">${movie.original_title}</div>
                     <div class="movie__category">${movie.genre_ids.map(genre => ` ${genres[genre]}`)}</div>
                 </div>`;
-
             moviesELement.appendChild(movieELement);
         });
     }

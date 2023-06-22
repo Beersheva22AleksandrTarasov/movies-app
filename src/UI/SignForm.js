@@ -33,7 +33,6 @@ export default class SignForm {
                 <input type="submit" value="Sign in" class="menu-button menu-button1">    
             </fieldset>
         </form>`;
-
         this.#setElements();
     }
     #setElements() {

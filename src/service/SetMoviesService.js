@@ -55,7 +55,6 @@ export default class SetMoviesService {
         }
         this.#handler;
     }
-
     async #handler() {
         const data = await this.getMovies(this.#pageNumber);
         this.showMovies(data)

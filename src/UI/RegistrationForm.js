@@ -32,7 +32,6 @@ export default class RegistrationForm {
                 <button type="submit" class="menu-button menu-button1">Registration</button>    
             </fieldset>
         </form>`;
-
         this.#setElements();
     }
     #setElements() {

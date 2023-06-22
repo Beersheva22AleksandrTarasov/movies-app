@@ -49,7 +49,6 @@ export default class Table {
         const buttonNext = document.getElementById(`next-button-${this.#selector}`);
         buttonNext.addEventListener('click', this.#nextPage.bind(this));
     }
-
     #prevPage(){
         if (this.#pageNumber > 1) {
             this.#pageNumber = this.#pageNumber - 1;

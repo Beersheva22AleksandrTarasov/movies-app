@@ -39,7 +39,6 @@ async function menuHandler(index) {
             signForm.resetUser();
             break;
         }
-
     }
 }
 async function action(serviceFn) {

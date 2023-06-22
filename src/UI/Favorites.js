@@ -4,7 +4,6 @@ export default class Favorites {
     showMovies(data) {
         const moviesELement = document.querySelector(`.movies-favorite`);
         moviesELement.innerHTML = '';
-
         data.forEach(movie => {
             const movieELement = document.createElement("div");
             movieELement.classList.add("movie");
