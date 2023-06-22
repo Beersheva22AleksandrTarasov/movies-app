@@ -26,7 +26,7 @@ export default class RegistrationForm {
                     <input class="text-field__input" type="text" id="${this.#getId('login')}" name="login" minlength="3" placeholder="Enter your login">
                 </div>
                 <div class="text-field">
-                    <label class="text-field__label" for="pass">Password (4 characters minimum):</label>
+                    <label class="text-field__label" for="pass">Password:</label>
                     <input class="text-field__input" type="password" id="${this.#getId('password')}" name="password" minlength="4" placeholder="Enter your password" required>
                 </div>
                 <button type="submit" class="menu-button menu-button1">Registration</button>    
@@ -36,7 +36,7 @@ export default class RegistrationForm {
         this.#setElements();
     }
     #setElements() {
-        this.#formElement = document.getElementById(this.#getId('form'));     
+        this.#formElement = document.getElementById(this.#getId('form'));
         this.#loginElement = document.getElementById(this.#getId('login'));
         this.#passwordElement = document.getElementById(this.#getId('password'));
     }

@@ -10,13 +10,13 @@ import serviceConfig from "./config/service-config.json" assert{type: 'json'}
 let currentUser = {};
 const section =
     [
-        { title: 'Home', id: 'home' },
-        { title: 'Now playing', id: 'now-playing' },
+        { title: 'Popular', id: 'popular' },
+        { title: 'New Films', id: 'in-cinema' },
         { title: 'Search', id: 'search' },
-        { title: 'Favorites', id: 'favorites' },
+        { title: 'Favorite', id: 'favorite' },
         { title: 'Registration', id: 'registration' },
-        { title: 'Sign In', id: 'sign-in' },
-        { title: 'Sign Out', id: 'sign-out' }
+        { title: 'Log In', id: 'log-in' },
+        { title: 'Log Out', id: 'log-out' }
     ];
 async function menuHandler(index) {
     switch (index) {
@@ -26,24 +26,12 @@ async function menuHandler(index) {
             break;
         }
         case 1: {
-            const movies = await action(nowPlayingTable.getMovies.bind(nowPlayingTable, 1));
-            nowPlayingTable.showMovies(movies);
-            break;
-        }
-        case 2: {
-            //await searchForm();
+            const movies = await action(inCinemaTable.getMovies.bind(inCinemaTable, 1));
+            inCinemaTable.showMovies(movies);
             break;
         }
         case 3: {
             favoritesTable.showMovies(currentUser.favoriteList);
-            break;
-        }
-        case 4: {
-            //await regestrationForm();
-            break;
-        }
-        case 5: {
-            //await signForm();
             break;
         }
         case 6: {
@@ -51,6 +39,7 @@ async function menuHandler(index) {
             signForm.resetUser();
             break;
         }
+
     }
 }
 async function action(serviceFn) {
@@ -68,12 +57,12 @@ const menu = new ApplicationBar('menu-place', section, menuHandler);
 const spinner = new Spinner('spinner-place');
 const companyService = new MovieServiceRest(serviceConfig.baseUrl);
 const popularTable = new Table(serviceConfig.popularUrl, 'popular');
-const nowPlayingTable = new Table(serviceConfig.nowPlayingUrl, 'now-playing');
+const inCinemaTable = new Table(serviceConfig.nowPlayingUrl, 'in-cinema');
 const favoritesTable = new Favorites();
 const searchForm = new SearchForm();
 const registrationForm = new RegistrationForm('registration');
 registrationForm.fillRegForm();
-const signForm = new SignForm('sign-in');
+const signForm = new SignForm('log-in');
 signForm.fillSignForm();
 registrationForm.addHandler(async (user) => {
     await action(companyService.addUser.bind(companyService, user));

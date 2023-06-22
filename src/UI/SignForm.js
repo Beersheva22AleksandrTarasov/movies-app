@@ -1,5 +1,3 @@
-import serviceConfig from "/src/config/service-config.json" assert{type: 'json'}
-import { getColor } from '../utils/GetColor.js';
 export default class SignForm {
     #formDataObj;
     #formElement;
@@ -57,18 +55,18 @@ export default class SignForm {
     }
     setUser(user) {
         if (this.#formDataObj.id == user.id && this.#formDataObj.password == user.password) {
-            document.getElementById('button-sign-in').style.display = "none";
-            document.getElementById('button-sign-out').style.display = "";
-            document.getElementById('button-favorites').style.display = "";
+            document.getElementById('button-log-in').style.display = "none";
+            document.getElementById('button-log-out').style.display = "";
+            document.getElementById('button-favorite').style.display = "";
         } else {
             alert("Wrong data");
         }
     }
 
     resetUser() {
-        document.getElementById('button-sign-in').style.display = "";
-        document.getElementById('button-sign-out').style.display = "none";
-        document.getElementById('button-favorites').style.display = "none";
+        document.getElementById('button-log-in').style.display = "";
+        document.getElementById('button-log-out').style.display = "none";
+        document.getElementById('button-favorite').style.display = "none";
     }
 
 }

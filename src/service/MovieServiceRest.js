@@ -10,8 +10,8 @@ export default class MovieServiceRest {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user)
         })
-        .then(response => response.json())
-        .catch(alert("Already exists"));
+            .then(response => response.json())
+            .catch(alert("Already exists"));
         return response;
     }
     #getUrl(id) {

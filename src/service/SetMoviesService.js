@@ -3,7 +3,7 @@ export default class SetMoviesService {
     #url;
     #pageNumber;
     #token;
-    constructor(url){
+    constructor(url) {
         this.#url = url;
         this.#pageNumber = 1;
         this.#token = serviceConfig.token;
@@ -29,23 +29,12 @@ export default class SetMoviesService {
                     <img src="${this.#imgUrl}${movie.poster_path}" class="movie-cover" alt="${movie.original_title}">
                 </div>
                 <div class="movies__info">
-                    <div class="movie__average movie__average--${this.#getColor(movie.vote_average)}">${movie.vote_average}</div>
                     <div class="movie__title">${movie.original_title}</div>
                     <div class="movie__category">${movie.genre_ids.map(genres => `${genres}`)}</div>
                 </div>`;
 
             moviesELement.appendChild(movieELement);
         });
-    }
-
-    #getColor(rate) {
-        if (rate >= 7) {
-            return "green";
-        } else if (rate >= 5) {
-            return "orange";
-        } else {
-            return "red";
-        }
     }
     #addListeners() {
         this.#buttonPrev = document.getElementById("button-prev");
@@ -54,13 +43,13 @@ export default class SetMoviesService {
         this.#buttonNext.addEventListener('click', this.#nextPage.bind());
     }
 
-    #prevPage(){
+    #prevPage() {
         if (this.#pageNumber > 1) {
             this.#pageNumber = this.#pageNumber - 1;
         }
         this.#handler;
     }
-    #nextPage(){
+    #nextPage() {
         if (this.#pageNumber < 50) {
             this.#pageNumber = this.#pageNumber + 1;
         }

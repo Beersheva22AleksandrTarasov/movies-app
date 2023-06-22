@@ -15,8 +15,8 @@ export default class ApplicationBar {
         const parentElement = document.getElementById(parentId);
         parentElement.innerHTML = sections.map(s => `<button id="button-${s.id}" class="menu-button menu-button1" hidden="true">${s.title}</button>`).join('');
         this.#buttons = parentElement.childNodes;
-        document.getElementById('button-sign-out').style.display = "none";
-        document.getElementById('button-favorites').style.display = "none";
+        document.getElementById('button-log-out').style.display = "none";
+        document.getElementById('button-favorite').style.display = "none";
     }
     #setSectionElements(sectionIds) {
         this.#sectionElements = sectionIds.map(id => document.getElementById(id));
